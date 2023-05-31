@@ -1,8 +1,5 @@
-import imghdr
+
 import streamlit as st 
-import numpy as np 
-import pandas as pd 
-from PIL import Image
 import webbrowser
 
 st.title('申請書')
