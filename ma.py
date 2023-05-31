@@ -4,7 +4,7 @@ import webbrowser
 
 st.title('申請書')
 
-st.write('DataFrame')
+#st.write('DataFrame')
 
 #df = pd.DataFrame(
  #   np.random.rand(100,2)/[50,50]+[35.69,139.70],
