@@ -1,14 +1,10 @@
 
 import streamlit as st 
-
+from PIL import Image
 
 st.title('申請書')
 
 
-
-
-# 画像ファイルの読み込み
-from PIL import Image
 image = Image.open('you.png')
 
 # ボタンが押されたら実行される関数
