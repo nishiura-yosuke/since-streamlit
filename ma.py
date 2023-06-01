@@ -30,6 +30,7 @@ def open_website():
 
         )
 
-if st.button('Webページを開く'):
-   webbrowser.open_new("<https://google.com>"
-        , new=0, autoraise=True)
+if st.button('Say hello'):
+    st.write('Why hello there')
+else:
+    st.write('Goodbye')
