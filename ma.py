@@ -1,5 +1,8 @@
 import streamlit as st
 
+st.title('各種申請')
+st.title('A title with _italics_ :blue[colors] and emojis :sunglasses:')
+
 # 画像ファイルの読み込み
 from PIL import Image
 image = Image.open('you.png')
