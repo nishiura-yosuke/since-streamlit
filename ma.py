@@ -31,4 +31,6 @@ def open_website():
         )
 
 if st.button('Webページを開く'):
-    open_website()
+   webbrowser.open_new(
+        "<https://logoform.jp/f/Mc4rD/1159399?key=203cdbdb060f1e9dd3b1519b609a321b13285f51692664ea66c393391bb0b47a>"
+        , new=0, autoraise=True)
