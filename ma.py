@@ -5,7 +5,7 @@ st.subheader('申請するボタンを押してください')
 
 # 画像ファイルの読み込み
 from PIL import Image
-image = Image.open('you.png')
+image = Image.open('yo.png')
 
 # ボタンが押されたら実行される関数
 def display_text_and_image():
@@ -18,14 +18,14 @@ def display_text_and_image():
 if st.button('youtube動画申請'):
     display_text_and_image()
     
-    image = Image.open('you.png')
+    image2 = Image.open('re.png')
 
 # ボタンが押されたら実行される関数
 def display_text_and_image2():
     st.write(
         "<https://logoform.jp/f/Mc4rD/1159399?key=203cdbdb060f1e9dd3b1519b609a321b13285f51692664ea66c393391bb0b47a>"
     )
-    st.image(image, caption='リーダー研修会Ⅰ',width=200)
+    st.image(image2, caption='リーダー研修会Ⅰ',width=200)
 
 # ボタンの作成２
 if st.button('リーダー研修会Ⅰ'):
