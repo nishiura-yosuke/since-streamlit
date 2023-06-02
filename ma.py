@@ -3,6 +3,7 @@ import streamlit as st
 st.title('各種申請')
 st.subheader('申請するボタンを押してください')
 
+
 # 画像ファイルの読み込み
 from PIL import Image
 image = Image.open('yo.png')
@@ -31,3 +32,12 @@ def display_text_and_image2():
 # ボタンの作成２
 if st.button('リーダー研修会Ⅰ'):
     display_text_and_image2()
+    
+
+
+
+if st.button('動画'):
+   video_file = open('rer.mp4', format="video/mp4", start_time=0)
+   video_bytes = video_file.read()
+
+   st.video(video_bytes)
