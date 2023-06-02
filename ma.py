@@ -37,7 +37,7 @@ if st.button('リーダー研修会Ⅰ'):
 
 
 if st.button('動画'):
-   video_file = open('rer.mp4', format="video/mp4", start_time=0)
+   video_file = open('https://youtu.be/Wu6Q79qiZpI', 'rb')
    video_bytes = video_file.read()
 
-   st.video(video_bytes)
+   st.video('https://youtu.be/Wu6Q79qiZpI', format="video/mp4", start_time=0)
