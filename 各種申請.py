@@ -24,10 +24,12 @@ if st.button('youtube動画申請'):
 
 # ボタンが押されたら実行される関数
 def display_text_and_image2():
-    st.write(
-        "<https://logoform.jp/f/Mc4rD/1159399?key=203cdbdb060f1e9dd3b1519b609a321b13285f51692664ea66c393391bb0b47a>"
-    )
-    st.image(image2, caption='リーダー研修会Ⅰ',width=200)
+   # st.write(
+   #     "<https://logoform.jp/f/Mc4rD/1159399?key=203cdbdb060f1e9dd3b1519b609a321b13285f51692664ea66c393391bb0b47a>"
+   # )
+   st.markdown("[](https://logoform.jp/f/Mc4rD/1159399?key=203cdbdb060f1e9dd3b1519b609a321b13285f51692664ea66c393391bb0b47a)") 
+   
+   st.image(image2, caption='リーダー研修会Ⅰ',width=200)
 
 # ボタンの作成２
 if st.button('リーダー研修会Ⅰ'):
@@ -38,3 +40,4 @@ if st.button('動画'):
 
    st.markdown("[YouTube動画](https://youtu.be/Wu6Q79qiZpI)")
    st.markdown("[YouTube動画2](https://youtu.be/Wu6Q79qiZpI)")
+   st.image(image2, caption='リーダー研修会Ⅰ',width=200)
