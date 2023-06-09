@@ -36,4 +36,5 @@ if st.button('リーダー研修会Ⅰ'):
 
 if st.button('動画'):
 
-   st.video('https://youtu.be/Wu6Q79qiZpI', format="video/mp4", start_time=0)
+   st.markdown("[YouTube動画](https://youtu.be/Wu6Q79qiZpI)")
+   st.markdown("[YouTube動画2](https://youtu.be/Wu6Q79qiZpI)")
