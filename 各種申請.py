@@ -1,43 +1,16 @@
 import streamlit as st
-
-st.title('各種申請')
-st.subheader('申請するボタンを押してください')
+import random
 
 
-# 画像ファイルの読み込み
-from PIL import Image
-image = Image.open('yo.png')
-image2 = Image.open('re.png')
+st.title('今日も元気でいきましょう')
+st.subheader('各種項目にはサイドから選択してください。')
+st.caption('スマートフォンの場合は、左上の＞を押してください。')
 
-# ボタンが押されたら実行される関数
-def display_text_and_image():
-    st.write(
-        "<https://logoform.jp/f/T64Xk/1145073?key=3af8caf1f2bb0014b0c9b046d1e376f7b8065170617264317f71b981444e9be9>"
-    )
-    st.image(image, caption='youtube動画申請',width=200)
+st.title('今日の運勢')
+st.write('おみくじボタンを押して、おみくじの結果を表示します。')
 
-# ボタンの作成
-if st.button('youtube動画申請'):
-    display_text_and_image()
-    
-    
+if st.button('おみくじ'):
+    results = ['大吉', '中吉', '小吉', '奇跡が起こるかも']
+    result = random.choice(results)
+    st.write('結果：', result)
 
-# ボタンが押されたら実行される関数
-def display_text_and_image2():
-   # st.write(
-   #     "<https://logoform.jp/f/Mc4rD/1159399?key=203cdbdb060f1e9dd3b1519b609a321b13285f51692664ea66c393391bb0b47a>"
-   # )
-   st.markdown("[](https://logoform.jp/f/Mc4rD/1159399?key=203cdbdb060f1e9dd3b1519b609a321b13285f51692664ea66c393391bb0b47a)") 
-   
-   st.image(image2, caption='リーダー研修会Ⅰ',width=200)
-
-# ボタンの作成２
-if st.button('リーダー研修会Ⅰ'):
-    display_text_and_image2()
-    
-
-if st.button('動画'):
-
-   st.markdown("[YouTube動画](https://youtu.be/Wu6Q79qiZpI)")
-   st.markdown("[YouTube動画2](https://youtu.be/Wu6Q79qiZpI)")
-   st.image(image2, caption='リーダー研修会Ⅰ',width=200)
