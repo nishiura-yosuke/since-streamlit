@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # CSVファイルを読み込み、Pandas DataFrameに保存する
-data = pd.read_excel("リハビリ動画.xlsx")
+data = pd.read_csv("リハビリ動画.csv")
 
 # Streamlitアプリを作成する
 def app():
