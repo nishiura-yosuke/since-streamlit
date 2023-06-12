@@ -14,7 +14,7 @@ def app():
         title = row["タイトル"]
         url = row["URL"]
         if st.button(title):
-            webbrowser.open_new_tab(url)
+           st.video(url)
 
 if __name__ == "__main__":
     app()
