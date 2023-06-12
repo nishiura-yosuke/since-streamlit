@@ -3,18 +3,32 @@ import streamlit as st
 import pandas as pd
 
 # CSVファイルを読み込み、Pandas DataFrameに保存する
-data = pd.read_excel("感染動画.xlsx")
+data = pd.read_csv("感染動画.csv")
 
 # Streamlitアプリを作成する
 def app():
+    # アプリのタイトルを表示
     st.title("感染動画")
+
+    # レイアウトを調整するためにカラムを使用する
+    col1, col2 = st.beta_columns(2)
 
     # 動画リストを表示する
     for index, row in data.iterrows():
         title = row["タイトル"]
         url = row["URL"]
-        if st.button(title):
-            webbrowser.open_new_tab(url)
+
+        # 偶数番目の動画は左側のカラムに、奇数番目の動画は右側のカラムにボタンを配置する
+        if index % 2 == 0:
+            with col1:
+                if st.button(title):
+                    # ボタンがクリックされた場合、対応するURLを開く
+                   st.video(url)
+        else:
+            with col2:
+                if st.button(title):
+                    # ボタンがクリックされた場合、対応するURLを開く
+                   st.video(url)
 
 if __name__ == "__main__":
     app()
