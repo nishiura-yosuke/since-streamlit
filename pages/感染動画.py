@@ -1,8 +1,20 @@
+import webbrowser
 import streamlit as st
+import pandas as pd
 
-st.title('感染動画')
+# CSVファイルを読み込み、Pandas DataFrameに保存する
+data = pd.read_csv("動画リスト.csv")
 
-if st.button('動画H'):
+# Streamlitアプリを作成する
+def app():
+    st.title("動画リスト")
 
-   st.write('https://youtu.be/Wu6Q79qiZpI', unsafe_allow_html=True)
-   
+    # 動画リストを表示する
+    for index, row in data.iterrows():
+        title = row["タイトル"]
+        url = row["URL"]
+        if st.button(title):
+            webbrowser.open_new_tab(url)
+
+if __name__ == "__main__":
+    app()

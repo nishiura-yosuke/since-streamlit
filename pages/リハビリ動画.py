@@ -1,43 +1,22 @@
 import streamlit as st
-import pydeck as pdk
-from geopy.geocoders import Nominatim
 
-geolocator = Nominatim(user_agent="geoapiExercises")
+# 動画１から動画１０までのURLをリストにまとめる
+videos = [
+    "<https://www.youtube.com>",
+    "<https://www.youtube.com>",
+    "<https://www.youtube.com>",
+]
 
-def get_location_by_address(address):
-    location = geolocator.geocode(address)
-    if location is None:
-        return None
-    return (location.latitude, location.longitude)
+# ボタンをクリックした時に指定のURLを開く
+def open_url(url):
+    js = f"window.open('{url}')"  # JavaScriptを生成
+    html = f"<script>{js}</script>"  # HTMLに埋め込む
+    st.markdown(html, unsafe_allow_html=True)  # 表示
 
-st.title('住所から緯度・経度への変換')
-
-address = st.text_input('住所を入力してください:')
-
-if st.button('変換'):
-    location = get_location_by_address(address)
-    if location is None:
-        st.write('指定された住所の位置を見つけることができませんでした。')
-    else:
-        st.write('緯度: ', location[0])
-        st.write('経度: ', location[1])
-        # Create a map centered at the location
-        view_state = pdk.ViewState(
-            latitude=location[0],
-            longitude=location[1],
-            zoom=10
-        )
-        layer = pdk.Layer(
-            'ScatterplotLayer',
-            data={'coordinates': [location]},
-            get_position='coordinates',
-            get_radius=1000,
-            get_fill_color=[255, 0, 0]
-        )
-        deck = pdk.Deck(
-            layers=[layer],
-            initial_view_state=view_state
-        )
-        st.pydeck_chart(deck)
-
+# 動画ごとにボタンを作成
+for i, video in enumerate(videos):
+    st.video(f"動画{i+1}")  # 動画を表示
+    button = st.button("URLを開く")  # ボタンを作成
+    if button:
+        open_url(video)  # ボタンをクリックしたらURLを開く
 
