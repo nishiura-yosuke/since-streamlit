@@ -2,7 +2,7 @@ import streamlit as st
 import random
 
 
-st.title('今日も元気でいきましょう')
+st.title('各種動画')
 st.subheader('各種項目にはサイドから選択してください。')
 st.caption('スマートフォンの場合は、左上の＞を押してください。')
 

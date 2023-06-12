@@ -1,22 +1,20 @@
+import webbrowser
 import streamlit as st
+import pandas as pd
 
-# 動画１から動画１０までのURLをリストにまとめる
-videos = [
-    "<https://www.youtube.com>",
-    "<https://www.youtube.com>",
-    "<https://www.youtube.com>",
-]
+# CSVファイルを読み込み、Pandas DataFrameに保存する
+data = pd.read_excel("リハビリ動画.xlsx")
 
-# ボタンをクリックした時に指定のURLを開く
-def open_url(url):
-    js = f"window.open('{url}')"  # JavaScriptを生成
-    html = f"<script>{js}</script>"  # HTMLに埋め込む
-    st.markdown(html, unsafe_allow_html=True)  # 表示
+# Streamlitアプリを作成する
+def app():
+    st.title("リハビリ動画")
 
-# 動画ごとにボタンを作成
-for i, video in enumerate(videos):
-    st.video(f"動画{i+1}")  # 動画を表示
-    button = st.button("URLを開く")  # ボタンを作成
-    if button:
-        open_url(video)  # ボタンをクリックしたらURLを開く
+    # 動画リストを表示する
+    for index, row in data.iterrows():
+        title = row["タイトル"]
+        url = row["URL"]
+        if st.button(title):
+            webbrowser.open_new_tab(url)
 
+if __name__ == "__main__":
+    app()

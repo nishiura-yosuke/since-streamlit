@@ -3,11 +3,11 @@ import streamlit as st
 import pandas as pd
 
 # CSVファイルを読み込み、Pandas DataFrameに保存する
-data = pd.read_excel("logoform.xlsx")
+data = pd.read_excel("感染動画.xlsx")
 
 # Streamlitアプリを作成する
 def app():
-    st.title("動画リスト")
+    st.title("感染動画")
 
     # 動画リストを表示する
     for index, row in data.iterrows():
